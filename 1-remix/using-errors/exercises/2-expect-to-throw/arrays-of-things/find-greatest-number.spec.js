@@ -1,5 +1,4 @@
 // #todo
-
 import { findGreatestNumber } from './find-greatest-number.js';
 
 describe('findGreatestNumber: returns the greatest number in an array of numbers', () => {
