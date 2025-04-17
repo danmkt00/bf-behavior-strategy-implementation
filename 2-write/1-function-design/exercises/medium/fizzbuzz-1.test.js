@@ -16,70 +16,70 @@
 // -------- your solutions --------
 
 for (const solution of [secretSolution]) {
-  describe(solution.name + ': fizbuzzish', () => {
-    describe('default parameter is 0', () => {
-      it('returns "fizzbuzz" when no argument is passed', () =>
-        expect(solution()).toEqual('fizzbuzz'));
-    });
+    describe(solution.name + ': fizbuzzish', () => {
+        describe('default parameter is 0', () => {
+            it('returns "fizzbuzz" when no argument is passed', () =>
+                expect(solution()).toEqual('fizzbuzz'));
+        });
 
-    describe('not divisible by 3 or 5', () => {
-      it('1 -> 1', () => {
-        expect(solution(1)).toEqual(1);
-      });
-      it('2 -> 2', () => {
-        expect(solution(2)).toEqual(2);
-      });
-      // write more tests in this category
-      it('4 -> 4', () => {
-        expect(solution(4)).toEqual(4);
-      });
-    });
+        describe('not divisible by 3 or 5', () => {
+            it('1 -> 1', () => {
+                expect(solution(1)).toEqual(1);
+            });
+            it('2 -> 2', () => {
+                expect(solution(2)).toEqual(2);
+            });
+            // write more tests in this category
+            it('4 -> 4', () => {
+                expect(solution(4)).toEqual(4);
+            });
+        });
 
-    describe('only divisible by only 3', () => {
-      const expectedValue = 'fizz';
-      it('3 -> "fizz"', () => {
-        expect(solution(3)).toEqual(expectedValue);
-      });
-      it('6 -> "fizz"', () => {
-        expect(solution(6)).toEqual(expectedValue);
-      });
-      // write more tests in this category
-      it('9 -> "fizz"', () => {
-        expect(solution(9)).toEqual(expectedValue);
-      });
-      it('12 -> "fizz"', () => {
-        expect(solution(12)).toEqual(expectedValue);
-      });
-    });
+        describe('only divisible by only 3', () => {
+            const expectedValue = 'fizz';
+            it('3 -> "fizz"', () => {
+                expect(solution(3)).toEqual(expectedValue);
+            });
+            it('6 -> "fizz"', () => {
+                expect(solution(6)).toEqual(expectedValue);
+            });
+            // write more tests in this category
+            it('9 -> "fizz"', () => {
+                expect(solution(9)).toEqual(expectedValue);
+            });
+            it('12 -> "fizz"', () => {
+                expect(solution(12)).toEqual(expectedValue);
+            });
+        });
 
-    describe('only divisible by only 5', () => {
-      const expectedValue = 'buzz';
-      it('5 -> "buzz"', () => {
-        expect(solution(5)).toEqual(expectedValue);
-      });
-      it('10 -> "buzz"', () => {
-        expect(solution(10)).toEqual(expectedValue);
-      });
-      // write more tests in this category
-      it('20 -> "buzz"', () => {
-        expect(solution(20)).toEqual(expectedValue);
-      });
-    });
+        describe('only divisible by only 5', () => {
+            const expectedValue = 'buzz';
+            it('5 -> "buzz"', () => {
+                expect(solution(5)).toEqual(expectedValue);
+            });
+            it('10 -> "buzz"', () => {
+                expect(solution(10)).toEqual(expectedValue);
+            });
+            // write more tests in this category
+            it('20 -> "buzz"', () => {
+                expect(solution(20)).toEqual(expectedValue);
+            });
+        });
 
-    describe('divisible by 5 and 3', () => {
-      const expectedValue = 'fizzbuzz';
-      it('15 -> "fizzbuzz"', () => {
-        expect(solution(15)).toEqual(expectedValue);
-      });
-      it('30 -> "fizzbuzz"', () => {
-        expect(solution(30)).toEqual(expectedValue);
-      });
-      // write more tests in this category
-      it('60 -> "fizzbuzz"', () => {
-        expect(solution(30)).toEqual(expectedValue);
-      });
+        describe('divisible by 5 and 3', () => {
+            const expectedValue = 'fizzbuzz';
+            it('15 -> "fizzbuzz"', () => {
+                expect(solution(15)).toEqual(expectedValue);
+            });
+            it('30 -> "fizzbuzz"', () => {
+                expect(solution(30)).toEqual(expectedValue);
+            });
+            // write more tests in this category
+            it('60 -> "fizzbuzz"', () => {
+                expect(solution(30)).toEqual(expectedValue);
+            });
+        });
     });
-  });
 }
 
 // minified solution for testing your tests

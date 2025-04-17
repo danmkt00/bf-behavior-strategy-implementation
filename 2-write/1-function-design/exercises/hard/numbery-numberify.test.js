@@ -14,10 +14,31 @@
 
 // -------- your solutions --------
 
-for (const solution of [secretSolution]) {
-    describe(solution.name + ': _', () => {
-        describe('_', () => {
-            it('_', () => {});
+const numberify = (arrayOfStrings) =>
+    arrayOfStrings
+        .map(Number) // Convert all to numbers
+        .filter((n) => !isNaN(n)); // Keep only real numbers
+
+for (const solution of [secretSolution, numberify]) {
+    describe(solution.name + ': returns a new array of numbers', () => {
+        describe('when it contains NaN', () => {
+            it('["a", "b", "1", "2"] -> [1, 2]', () => {
+                expect(solution(['a', 'b', '1', '2'])).toEqual([1, 2]);
+            });
+            it('array that contains a nagative number string', () => {
+                expect(solution(['-2', '1', '0'])).toEqual([-2, 1, 0]);
+            });
+            it('array with just one number string', () => {
+                expect(solution(['10'])).toEqual([10]);
+            });
+            it('array with  repeated number string', () => {
+                expect(
+                    solution(['-1', '2', '3', '-1', '2', '3', 'text']),
+                ).toEqual([-1, 2, 3, -1, 2, 3]);
+            });
+            it('array with a big number string', () => {
+                expect(solution(['999999999999'])).toEqual([999999999999]);
+            });
         });
     });
 }

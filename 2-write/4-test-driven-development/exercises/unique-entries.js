@@ -18,4 +18,10 @@
  *
  * uniqueEntries([3, 1, 3, 2], false); // [3, 2, 1]
  */
-export const uniqueEntries = (nums = [], up = true) => {};
+const uniqueEntries = (nums = [], up = true) => {
+    const uniqueNums = [...new Set(nums)];
+
+    return uniqueNums.sort((a, b) => (up ? a - b : b - a));
+};
+
+export default uniqueEntries;

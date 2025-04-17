@@ -8,7 +8,7 @@
  *
  * @example
  *
- * diffArrays([2], [1, 3]); // [3]
+ * diffArrays([2], [1, 3]); // [2, 3]
  *
  * @example
  *
@@ -16,9 +16,30 @@
  *
  * @example
  *
- * diffArrays([2, 1], [3, 2]); // []
+ * diffArrays([2, 1], [3, 2]); // [3]
  * @example
  *
  * diffArrays([1, 2, 3], [4, 5]); // [1, 2, 3, 4, 5]
  */
-export const diffArrays = (a = [], b = []) => {};
+const diffArrays = (a = [], b = []) => {
+    const result = [];
+    a.forEach((num) => {
+        if (!b.includes(num)) {
+            if (!result.includes(num)) {
+                result.push(num);
+            }
+        }
+    });
+
+    b.forEach((num) => {
+        if (!a.includes(num)) {
+            if (!result.includes(num)) {
+                result.push(num);
+            }
+        }
+    });
+
+    return result;
+};
+
+export default diffArrays;

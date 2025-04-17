@@ -14,72 +14,72 @@
 // -------- your solutions --------
 
 for (const solution of [secretSolution]) {
-  describe(
-    solution.name + ': reverses a string then sets to lower or upper case',
-    () => {
-      describe("the function's default parameters", () => {
-        it('second parameter defaults to true', () => {
-          expect(solution('asdf')).toEqual('fdsa');
-        });
-        it('first parameter defaults to an empty string', () => {
-          expect(solution()).toEqual('');
-        });
-      });
-      // write the tests indicated by the comments
-      describe('when set to lower case', () => {
-        // when the text is an empty string
-        it(`'' -> ''`, () => {
-          expect(solution('')).toEqual('');
-        });
-        // when the text is all upper case
-        it(`'ABCDE' -> 'edcba'`, () => {
-          expect(solution('ABCDE')).toEqual('edcba');
-        });
-        // when the text is all lower case
-        it(`'abcde' -> 'edcba'`, () => {
-          expect(solution('abcde')).toEqual('edcba');
-        });
-        // when the text is mixed upper and lower case
-        it(`'aBcDe' -> 'edcba'`, () => {
-          expect(solution('aBcDe')).toEqual('edcba');
-        });
-        // when the text contains punctuation
-        it(`'A,B!C-D_E' -> 'e_d-c!b,a'`, () => {
-          expect(solution('A,B!C-D_E')).toEqual('e_d-c!b,a');
-        });
-        // when the text contains numbers
-        it(`'Abcde1' -> '1edcba'`, () => {
-          expect(solution('Abcde1')).toEqual('1edcba');
-        });
-      });
-      describe('when set to upper case', () => {
-        // when the text is an empty string
-        it(`'' -> ''`, () => {
-          expect(solution('', false)).toEqual('');
-        });
-        // when the text is all upper case
-        it(`'ABCDE' -> 'EDCBA'`, () => {
-          expect(solution('ABCDE', false)).toEqual('EDCBA');
-        });
-        // when the text is all lower case
-        it(`'abcde' -> 'EDCBA'`, () => {
-          expect(solution('abcde', false)).toEqual('EDCBA');
-        });
-        // when the text is mixed upper and lower case
-        it(`'aBcDe' -> 'EDCBA'`, () => {
-          expect(solution('aBcDe', false)).toEqual('EDCBA');
-        });
-        // when the text contains punctuation
-        it(`'A,B!C-D_E' -> 'E_D-C!B,A'`, () => {
-          expect(solution('A,B!C-D_E', false)).toEqual('E_D-C!B,A');
-        });
-        // when the text contains numbers
-        it(`'Abcde1' -> '1EDCBA'`, () => {
-          expect(solution('Abcde1', false)).toEqual('1EDCBA');
-        });
-      });
-    },
-  );
+    describe(
+        solution.name + ': reverses a string then sets to lower or upper case',
+        () => {
+            describe("the function's default parameters", () => {
+                it('second parameter defaults to true', () => {
+                    expect(solution('asdf')).toEqual('fdsa');
+                });
+                it('first parameter defaults to an empty string', () => {
+                    expect(solution()).toEqual('');
+                });
+            });
+            // write the tests indicated by the comments
+            describe('when set to lower case', () => {
+                // when the text is an empty string
+                it(`'' -> ''`, () => {
+                    expect(solution('')).toEqual('');
+                });
+                // when the text is all upper case
+                it(`'ABCDE' -> 'edcba'`, () => {
+                    expect(solution('ABCDE')).toEqual('edcba');
+                });
+                // when the text is all lower case
+                it(`'abcde' -> 'edcba'`, () => {
+                    expect(solution('abcde')).toEqual('edcba');
+                });
+                // when the text is mixed upper and lower case
+                it(`'aBcDe' -> 'edcba'`, () => {
+                    expect(solution('aBcDe')).toEqual('edcba');
+                });
+                // when the text contains punctuation
+                it(`'A,B!C-D_E' -> 'e_d-c!b,a'`, () => {
+                    expect(solution('A,B!C-D_E')).toEqual('e_d-c!b,a');
+                });
+                // when the text contains numbers
+                it(`'Abcde1' -> '1edcba'`, () => {
+                    expect(solution('Abcde1')).toEqual('1edcba');
+                });
+            });
+            describe('when set to upper case', () => {
+                // when the text is an empty string
+                it(`'' -> ''`, () => {
+                    expect(solution('', false)).toEqual('');
+                });
+                // when the text is all upper case
+                it(`'ABCDE' -> 'EDCBA'`, () => {
+                    expect(solution('ABCDE', false)).toEqual('EDCBA');
+                });
+                // when the text is all lower case
+                it(`'abcde' -> 'EDCBA'`, () => {
+                    expect(solution('abcde', false)).toEqual('EDCBA');
+                });
+                // when the text is mixed upper and lower case
+                it(`'aBcDe' -> 'EDCBA'`, () => {
+                    expect(solution('aBcDe', false)).toEqual('EDCBA');
+                });
+                // when the text contains punctuation
+                it(`'A,B!C-D_E' -> 'E_D-C!B,A'`, () => {
+                    expect(solution('A,B!C-D_E', false)).toEqual('E_D-C!B,A');
+                });
+                // when the text contains numbers
+                it(`'Abcde1' -> '1EDCBA'`, () => {
+                    expect(solution('Abcde1', false)).toEqual('1EDCBA');
+                });
+            });
+        },
+    );
 }
 
 // minified solution for testing your tests
