@@ -12,4 +12,11 @@
  *
  * reverseWords('hello world!'); // 'olleh dlrow!'
  */
-export const reverseWords = (text = '') => {};
+const reverseWords = (text = '') => {
+    return text
+        .split(' ')
+        .map((word) => word.split('').reverse().join('')) // Reverse each word
+        .join(' '); // Join the reversed words back into a string
+};
+
+export default reverseWords;

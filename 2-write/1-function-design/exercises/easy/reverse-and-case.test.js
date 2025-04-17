@@ -28,22 +28,55 @@ for (const solution of [secretSolution]) {
             // write the tests indicated by the comments
             describe('when set to lower case', () => {
                 // when the text is an empty string
-                it(_, () => {
-                    expect(solution(_, _)).toEqual(_);
+                it(`'' -> ''`, () => {
+                    expect(solution('')).toEqual('');
                 });
                 // when the text is all upper case
+                it(`'ABCDE' -> 'edcba'`, () => {
+                    expect(solution('ABCDE')).toEqual('edcba');
+                });
                 // when the text is all lower case
+                it(`'abcde' -> 'edcba'`, () => {
+                    expect(solution('abcde')).toEqual('edcba');
+                });
                 // when the text is mixed upper and lower case
+                it(`'aBcDe' -> 'edcba'`, () => {
+                    expect(solution('aBcDe')).toEqual('edcba');
+                });
                 // when the text contains punctuation
+                it(`'A,B!C-D_E' -> 'e_d-c!b,a'`, () => {
+                    expect(solution('A,B!C-D_E')).toEqual('e_d-c!b,a');
+                });
                 // when the text contains numbers
+                it(`'Abcde1' -> '1edcba'`, () => {
+                    expect(solution('Abcde1')).toEqual('1edcba');
+                });
             });
             describe('when set to upper case', () => {
                 // when the text is an empty string
+                it(`'' -> ''`, () => {
+                    expect(solution('', false)).toEqual('');
+                });
                 // when the text is all upper case
+                it(`'ABCDE' -> 'EDCBA'`, () => {
+                    expect(solution('ABCDE', false)).toEqual('EDCBA');
+                });
                 // when the text is all lower case
+                it(`'abcde' -> 'EDCBA'`, () => {
+                    expect(solution('abcde', false)).toEqual('EDCBA');
+                });
                 // when the text is mixed upper and lower case
+                it(`'aBcDe' -> 'EDCBA'`, () => {
+                    expect(solution('aBcDe', false)).toEqual('EDCBA');
+                });
                 // when the text contains punctuation
+                it(`'A,B!C-D_E' -> 'E_D-C!B,A'`, () => {
+                    expect(solution('A,B!C-D_E', false)).toEqual('E_D-C!B,A');
+                });
                 // when the text contains numbers
+                it(`'Abcde1' -> '1EDCBA'`, () => {
+                    expect(solution('Abcde1', false)).toEqual('1EDCBA');
+                });
             });
         },
     );

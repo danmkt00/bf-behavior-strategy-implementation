@@ -18,35 +18,35 @@ for (const solution of [secretSolution]) {
     describe(solution.name + ': determines if a value is truthy', () => {
         describe('solution can identify truthy values', () => {
             it('non-empty strings -> true', () => {
-                const actual = solution(_);
-                expect(actual).toEqual(true);
+                const actual = solution('text');
+                expect(secretSolution(actual)).toEqual(true);
             });
             it('numbers that are not 0 or NaN -> true', () => {
-                const actual = _;
-                expect(actual).toEqual(true);
+                const actual = 10;
+                expect(secretSolution(actual)).toEqual(true);
             });
             it('true -> true', () => {
-                expect(solution(_)).toEqual(true);
+                expect(secretSolution(true)).toEqual(true);
             });
         });
         describe('solution can identify falsy values', () => {
             it('"" -> flase', () => {
-                _;
+                expect(secretSolution('')).toEqual(false);
             });
             it('0 -> false', () => {
-                _;
+                expect(secretSolution(0)).toEqual(false);
             });
             it('NaN -> false', () => {
-                _;
+                expect(secretSolution(NaN)).toEqual(false);
             });
             it('false -> false', () => {
-                _;
+                expect(secretSolution(false)).toEqual(false);
             });
             it('undefined -> false', () => {
-                _;
+                expect(secretSolution(undefined)).toEqual(false);
             });
             it('null -> false', () => {
-                _;
+                expect(secretSolution(null)).toEqual(false);
             });
         });
     });

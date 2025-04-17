@@ -11,10 +11,45 @@
 
 // -------- your solutions --------
 
-for (const solution of [secretSolution]) {
-    describe(solution.name + ': _', () => {
-        describe('_', () => {
-            it('_', () => {});
+const reverseAndConcate = (arrayOfStrings) =>
+    [...arrayOfStrings].reverse().join('');
+
+for (const solution of [secretSolution, reverseAndConcate]) {
+    describe(`${solution.name}: joins reversed strings`, () => {
+        it('returns the single string when array has one element', () => {
+            const input = ['text'];
+            const result = solution(input);
+            expect(result).toBe('text');
+        });
+
+        it('joins two elements in reverse order', () => {
+            const input = ['text', 'one'];
+            const result = solution(input);
+            expect(result).toBe('onetext');
+        });
+
+        it('joins multiple elements in reverse order', () => {
+            const input = ['t', 'x', 'e', 't'];
+            const result = solution(input);
+            expect(result).toBe('text');
+        });
+
+        it('handles strings with spaces and special characters', () => {
+            const input = ['space ', 'exclamation!', '@at'];
+            const result = solution(input);
+            expect(result).toBe('@atexclamation!space ');
+        });
+
+        it('does not mutate the original array', () => {
+            const input = ['x', 'y', 'z'];
+            const copy = [...input];
+            solution(input);
+            expect(input).toEqual(copy);
+        });
+        it('returns an empty string when given an empty array', () => {
+            const input = [];
+            const result = solution(input);
+            expect(result).toBe('');
         });
     });
 }

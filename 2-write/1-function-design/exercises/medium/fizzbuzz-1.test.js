@@ -30,6 +30,9 @@ for (const solution of [secretSolution]) {
                 expect(solution(2)).toEqual(2);
             });
             // write more tests in this category
+            it('4 -> 4', () => {
+                expect(solution(4)).toEqual(4);
+            });
         });
 
         describe('only divisible by only 3', () => {
@@ -41,6 +44,12 @@ for (const solution of [secretSolution]) {
                 expect(solution(6)).toEqual(expectedValue);
             });
             // write more tests in this category
+            it('9 -> "fizz"', () => {
+                expect(solution(9)).toEqual(expectedValue);
+            });
+            it('12 -> "fizz"', () => {
+                expect(solution(12)).toEqual(expectedValue);
+            });
         });
 
         describe('only divisible by only 5', () => {
@@ -52,6 +61,9 @@ for (const solution of [secretSolution]) {
                 expect(solution(10)).toEqual(expectedValue);
             });
             // write more tests in this category
+            it('20 -> "buzz"', () => {
+                expect(solution(20)).toEqual(expectedValue);
+            });
         });
 
         describe('divisible by 5 and 3', () => {
@@ -63,6 +75,9 @@ for (const solution of [secretSolution]) {
                 expect(solution(30)).toEqual(expectedValue);
             });
             // write more tests in this category
+            it('60 -> "fizzbuzz"', () => {
+                expect(solution(30)).toEqual(expectedValue);
+            });
         });
     });
 }

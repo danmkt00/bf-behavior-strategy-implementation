@@ -24,7 +24,18 @@ for (const solution of [secretSolution]) {
         it('1 -> [0, 1]', () => {
             expect(solution(1)).toEqual([0, 1]);
         });
-        // write at least 5 more tests ...
+        it('3 -> [0, 1, 2, 3]', () => {
+            expect(solution(3)).toEqual([0, 1, 2, 3]);
+        });
+        it('4 -> [0, 1, 2, 3, 4]', () => {
+            expect(solution(4)).toEqual([0, 1, 2, 3, 4]);
+        });
+        it('5 -> [0, 1, 2, 3, 4, 5]', () => {
+            expect(solution(5)).toEqual([0, 1, 2, 3, 4, 5]);
+        });
+        it(`NaN -> "start is not an integer"`, () => {
+            expect(() => solution(NaN)).toThrow('max is not an integer');
+        });
     });
 }
 
